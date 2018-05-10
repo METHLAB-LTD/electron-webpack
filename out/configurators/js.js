@@ -17,7 +17,7 @@ function _semver() {
 
 function createBabelLoader(configurator) {
   // better to use require instead of just preset name to avoid babel resolving (in our test we set custom resolver - and only in case of explicit required it works)
-  const presets = [[require("@babel/preset-env"), {
+  const presets = [[require("@babel/preset-env").default, {
     modules: false,
     targets: computeBabelEnvTarget(configurator.isRenderer, configurator.electronVersion)
   }]];
@@ -75,5 +75,5 @@ function computeBabelEnvTarget(isRenderer, electronVersion) {
   return {
     node: nodeVersion
   };
-} 
+}
 //# sourceMappingURL=js.js.map
