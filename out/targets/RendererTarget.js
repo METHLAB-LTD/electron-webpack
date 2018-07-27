@@ -246,7 +246,7 @@ class BaseRendererTarget extends _BaseTarget().BaseTarget {
     return (0, _bluebirdLst().coroutine)(function* () {
       configurator.debug("Add ExtractTextPlugin plugin");
       configurator.plugins.push(new MiniCssExtractPlugin({
-        filename: `${configurator.type === "renderer-dll" ? "vendor" : "styles"}.css`
+        filename: `${configurator.type === "renderer-dll" ? "vendor" : "[name]-styles"}.css`
       })); // https://github.com/electron-userland/electrify/issues/1
 
       if (!configurator.isProduction) {
